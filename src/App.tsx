@@ -1,13 +1,19 @@
-import { Button } from "#components/ui/button";
+import { Routes, Route } from 'react-router-dom';
 import "./App.css";
+import MainMenu from './features/mainMenu/page';
+import Navbar from './utilities/navbar';
 
 const App = () => {
-  return (
-    <main className="container flex flex-col justify-center items-center w-screen h-screen">
-      <h1>Welcome!</h1>
-      <Button className="cursor-pointer p-4">Hello</Button>
-    </main>
-  );
+    return (
+        <>
+            <div className='flex flex-row'>
+                <Navbar />
+                <Routes>
+                    <Route path='/' element={<MainMenu />} />
+                </Routes>
+            </div>
+        </>
+    )
 }
 
 export default App;
