@@ -24,7 +24,7 @@ const App = () => {
                 <Navbar />
                 <main className='flex-1'>
                     <Routes>
-                        <Route path='/' element={<MainMenu />} />
+                        <Route path='/mainMenu' element={<MainMenu />} />
                         <Route path='/settings' element={<SettingMenu />} />
                     </Routes>
                 </main>

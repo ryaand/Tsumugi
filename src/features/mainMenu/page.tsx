@@ -9,13 +9,13 @@ const MainMenu = () => {
                 <p>Select your category to begin your session.</p>
             </div>
             <div className="flex w-full pt-10 gap-5 items-center">
-                <Link to={"/hiraganaPickKana"} className="w-1/3">
+                <Link to={"/mainMenu/hiraganaPickKana"} className="w-1/3">
                     <PickCard picture={"あ"} title={"Hiragana"} description={"The photenic foundation"} />
                 </Link>
-                <Link to={"/hiraganaPickKana"} className="w-1/3 pointer-events-none opacity-0">
+                <Link to={"/mainMenu/hiraganaPickKana"} className="w-1/3 pointer-events-none opacity-0">
                     <PickCard picture={"ア"} title={"Katakana"} description={"For foreign words"} />
                 </Link>
-                <Link to={"/hiraganaPickKana"} className="w-1/3 pointer-events-none opacity-0">
+                <Link to={"/mainMenu/hiraganaPickKana"} className="w-1/3 pointer-events-none opacity-0">
                     <PickCard picture={"学"} title={"Kanji"} description={"Logographic characters"} />
                 </Link>
             </div>
