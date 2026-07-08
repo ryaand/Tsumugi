@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
     const getMenuClass = ({ isActive }) => {
-        const baseClass = "flex justify-start p-3 px-7 gap-4 rounded-full items-center h-12 w-full"
+        const baseClass = "flex justify-start p-3 px-4 gap-2 rounded-full items-center h-12 w-full"
 
         if (isActive) {
             return `${baseClass} bg-accent-foreground text-[rgb(145,198,236)]`
