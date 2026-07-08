@@ -3,6 +3,7 @@ import "./App.css";
 import MainMenu from './features/mainMenu/page';
 import Navbar from './utilities/navbar';
 import { useEffect } from 'react';
+import SettingMenu from './features/settingMenu/page';
 
 const App = () => {
     useEffect(() => {
@@ -24,6 +25,7 @@ const App = () => {
                 <main className='flex-1'>
                     <Routes>
                         <Route path='/' element={<MainMenu />} />
+                        <Route path='/settings' element={<SettingMenu />} />
                     </Routes>
                 </main>
             </div>
