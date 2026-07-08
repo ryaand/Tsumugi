@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import "./App.css";
-import MainMenu from './features/mainMenu/page';
+import MainMenu from './features/mainMenu/mainMenu';
 import Navbar from './utilities/navbar';
 import { useEffect } from 'react';
 import SettingMenu from './features/settingMenu/page';

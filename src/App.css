@@ -6,6 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
+  user-select: none;
+  -webkit-user-select: none;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -213,10 +215,12 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     letter-spacing: var(--tracking-normal);
   }
+
   html {
     @apply font-sans;
   }
