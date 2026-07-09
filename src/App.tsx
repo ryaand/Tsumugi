@@ -4,6 +4,7 @@ import MainMenu from './features/mainMenu/mainMenu';
 import Navbar from './utilities/navbar';
 import { useEffect } from 'react';
 import SettingMenu from './features/settingMenu/page';
+import PickhiraganaChar from './features/mainMenu/pickHiraganaChar';
 
 const App = () => {
     useEffect(() => {
@@ -26,6 +27,7 @@ const App = () => {
                     <Routes>
                         <Route path='/mainMenu' element={<MainMenu />} />
                         <Route path='/settings' element={<SettingMenu />} />
+                        <Route path='/mainMenu/pickHiraganaChar' element={<PickhiraganaChar />} />
                     </Routes>
                 </main>
             </div>
