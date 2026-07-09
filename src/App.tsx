@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import "./App.css";
 import MainMenu from './features/mainMenu/mainMenu';
 import Navbar from './utilities/navbar';
@@ -25,6 +25,7 @@ const App = () => {
                 <Navbar />
                 <main className='flex-1'>
                     <Routes>
+                        <Route path='/' element={<Navigate to="/mainMenu" replace />} />
                         <Route path='/mainMenu' element={<MainMenu />} />
                         <Route path='/settings' element={<SettingMenu />} />
                         <Route path='/mainMenu/pickHiraganaChar' element={<PickhiraganaChar />} />
