@@ -15,6 +15,13 @@ export const hiraganaDatabase: KanaItem[] = [
     { id: 'h-ke', char: 'け', romaji: 'ke', type: 'hiragana', group: 'ka' },
     { id: 'h-ko', char: 'こ', romaji: 'ko', type: 'hiragana', group: 'ka' },
 
+    // SA
+    { id: 'h-sa', char: 'sa', romaji: 'sa', type: 'hiragana', group: 'sa' },
+    { id: 'h-shi', char: 'し', romaji: 'shi', type: 'hiragana', group: 'sa' },
+    { id: 'h-su', char: 'す', romaji: 'su', type: 'hiragana', group: 'sa' },
+    { id: 'h-se', char: 'せ', romaji: 'se', type: 'hiragana', group: 'sa' },
+    { id: 'h-so', char: 'そ', romaji: 'so', type: 'hiragana', group: 'sa' },
+
     // TA
     { id: 'h-ta', char: 'た', romaji: 'ta', type: 'hiragana', group: 'ta' },
     { id: 'h-chi', char: 'ち', romaji: 'chi', type: 'hiragana', group: 'ta' },
