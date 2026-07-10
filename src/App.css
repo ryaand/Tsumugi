@@ -5,7 +5,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
-body {
+html, body {
+  overscroll-behavior: none;
+  width: 100vh;
+  height: 100vh;
   user-select: none;
   -webkit-user-select: none;
   font-family: "Plus Jakarta Sans", sans-serif;

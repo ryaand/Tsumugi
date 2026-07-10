@@ -1,6 +1,6 @@
 const PickhiraganaChar = () => {
     return (
-        <div className="w-full h-screen flex flex-col p-10">
+        <div className="h-screen flex flex-col p-10 overflow-x-hidden">
             <div className="flex justify-between gap-10">
                 <div>
                     <h1 className="text-2xl font-bold">Hiragana Characters</h1>

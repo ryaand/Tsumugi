@@ -9,11 +9,9 @@ import PickhiraganaChar from './features/mainMenu/pickHiraganaChar';
 const App = () => {
     useEffect(() => {
         const handleContextMenu = (e: MouseEvent) => {
-            e.preventDefault();
-        };
-
+            e.preventDefault()
+        }
         document.addEventListener('contextmenu', handleContextMenu)
-
         return () => {
             document.removeEventListener('contextmenu', handleContextMenu)
         }
@@ -21,9 +19,11 @@ const App = () => {
 
     return (
         <>
-            <div className='flex flex-row justify-between min-h-screen w-full'>
-                <Navbar />
-                <main className='flex-1'>
+            <div className='flex flex-row justify-between min-h-screen w-screen'>
+                <div className='fixed w-1/5'>
+                    <Navbar />
+                </div>
+                <main className='absolute h-full w-4/5 right-0'>
                     <Routes>
                         <Route path='/' element={<Navigate to="/mainMenu" replace />} />
                         <Route path='/mainMenu' element={<MainMenu />} />
