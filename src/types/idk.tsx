@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"; // 1. PERBAIKAN: useEffect wajib di-import di sini
 import { Button } from "#components/ui/button";
 import { Input } from "#components/ui/input";
-import "./App.css";
 
 interface KanaItem {
     id: string;
