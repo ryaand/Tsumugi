@@ -1,6 +1,6 @@
 import { Card } from "#components/ui/card"
 
-const PickCard = ({picture, title, description}) => {
+const SelectCategory = ({picture, title, description}) => {
     return (
         <div className="">
             <Card className="w-full hover:shadow-2xl/50 hover:border-2 hover:border-accent-foreground border-2 border-accent cursor-pointer transition-all duration-100">
@@ -31,4 +31,4 @@ const PickCard = ({picture, title, description}) => {
     )
 }
 
-export default PickCard
+export default SelectCategory

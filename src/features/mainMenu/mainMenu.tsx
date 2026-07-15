@@ -1,4 +1,4 @@
-import PickCard from "./components/pickCard"
+import SelectCategory from "./components/selectCategory"
 import { Link } from "react-router-dom"
 
 const MainMenu = () => {
@@ -10,13 +10,13 @@ const MainMenu = () => {
             </div>
             <div className="flex w-full pt-10 gap-5 items-center">
                 <Link to={"/mainMenu/pickHiraganaChar"} className="w-1/3">
-                    <PickCard picture={"あ"} title={"Hiragana"} description={"The photenic foundation"} />
+                    <SelectCategory picture={"あ"} title={"Hiragana"} description={"The photenic foundation"} />
                 </Link>
                 <Link to={"/mainMenu/hiraganaPickKana"} className="w-1/3 pointer-events-none opacity-0">
-                    <PickCard picture={"ア"} title={"Katakana"} description={"For foreign words"} />
+                    <SelectCategory picture={"ア"} title={"Katakana"} description={"For foreign words"} />
                 </Link>
                 <Link to={"/mainMenu/hiraganaPickKana"} className="w-1/3 pointer-events-none opacity-0">
-                    <PickCard picture={"学"} title={"Kanji"} description={"Logographic characters"} />
+                    <SelectCategory picture={"学"} title={"Kanji"} description={"Logographic characters"} />
                 </Link>
             </div>
         </div>
