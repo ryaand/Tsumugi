@@ -1,23 +1,13 @@
-"use client"
-
 import { hiraganaDatabase } from "../../data/kanaDatabase"
-import { Button } from "#components/ui/button"
-import { useState } from "react"
+import CharCard from "./components/charCard"
 
 const PickhiraganaChar = () => {
-  
-  const defaultStyleCard = "bg-sky-50/50 rounded-lg p-17 flex-col flex border-3 border-accent"
-  const selectedStyleCard = defaultStyleCard + " border-3 border-accent-foreground"
-  const [isSelected, setIsSelected] = useState(false)
 
-  const renderGroup = (groupName) => {
+  const renderGroup = (groupName: string) => {
     return hiraganaDatabase
       .filter(item => item.group === groupName)
       .map((data) => (
-        <Button variant={"outline"} key={data.id} onClick={() => setIsSelected(isSelected ? false : true)} className={isSelected ? selectedStyleCard : defaultStyleCard}>
-          <div className="text-4xl font-black">{data.char}</div>
-          <div>{data.romaji}</div>
-        </Button>
+        <CharCard id={data.id} char={data.char} romaji={data.romaji} />
       ))
   }
 
