@@ -4,7 +4,7 @@ import MainMenu from './features/mainMenu/mainMenu';
 import Navbar from './utilities/navbar';
 import { useEffect } from 'react';
 import SettingMenu from './features/settingMenu/page';
-import PickhiraganaChar from './features/mainMenu/pickHiraganaChar';
+import PickhiraganaChar from './features/mainMenu/selectKana';
 
 const App = () => {
     useEffect(() => {
