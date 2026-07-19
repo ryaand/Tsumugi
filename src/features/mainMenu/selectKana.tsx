@@ -7,7 +7,7 @@ const PickhiraganaChar = () => {
   const [selectedKanas, setSelectedKanas] = useState([])
 
   function handleAddKanas(data) {
-    const selected= {
+    const selected = {
       id: data.id,
       char: data.char,
       romaji: data.romaji
@@ -21,12 +21,12 @@ const PickhiraganaChar = () => {
 
   const renderGroup = (groupName: string) => {
     return hiraganaDatabase
-    .filter(item => item.group === groupName)
-    .map((data) => (
-      <CharCard id={data.id} char={data.char} romaji={data.romaji} onClick={() => handleAddKanas(data)} />
-    ))
+      .filter(item => item.group === groupName)
+      .map((data, index) => (
+        <CharCard id={data.id} char={data.char} romaji={data.romaji} onAdd={() => handleAddKanas(data)} onRemove={() => handleRemoveKanas(index)} />
+      ))
   }
-  console.log("ini selected: ", selectedKanas)
+
   return (
     <div className="h-screen flex flex-col p-10 overflow-x-hidden">
       <div className="flex justify-between gap-10 items-center">
@@ -46,11 +46,6 @@ const PickhiraganaChar = () => {
         <div className="flex w-full justify-between">{renderGroup('a')}</div>
       </div>
       <div className="flex w-full pt-10 gap-5 items-center"></div>
-      <div>
-        {selectedKanas.map((tes) => (
-          tes.char
-        ))}
-      </div>
     </div>
   )
 }
