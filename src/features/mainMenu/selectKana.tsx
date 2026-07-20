@@ -1,10 +1,14 @@
 import { useState } from "react"
 import { hiraganaDatabase } from "../../data/kanaDatabase"
 import CharCard from "./components/charCard"
+import { Button } from "#components/ui/button"
+import PlayNow from "./play"
 
 const PickhiraganaChar = () => {
 
   const [selectedKanas, setSelectedKanas] = useState([])
+  const [play, setPlay] = useState(false)
+
 
   function handleAddKanas(data) {
     const selected = {
@@ -46,6 +50,16 @@ const PickhiraganaChar = () => {
         <div className="flex w-full justify-between">{renderGroup('a')}</div>
       </div>
       <div className="flex w-full pt-10 gap-5 items-center"></div>
+      <div>
+        <Button className={""} onClick={() => setPlay(play ? false : true)}>Play</Button>
+        {
+          play ?
+          <PlayNow tes={play ? "fixed" : "hidden"} off={() => setPlay(false)} />
+          :
+          null
+        }
+        {/* <PlayNow tes={play ? "hidden" : "fixed"} /> */}
+      </div>
     </div>
   )
 }
