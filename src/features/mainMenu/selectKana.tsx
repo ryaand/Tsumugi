@@ -31,6 +31,8 @@ const PickhiraganaChar = () => {
       ))
   }
 
+  console.log("ini di Select section: ", selectedKanas)
+
   return (
     <div className="h-screen flex flex-col p-10 overflow-x-hidden">
       <div className="flex justify-between gap-10 items-center">
@@ -54,7 +56,7 @@ const PickhiraganaChar = () => {
         <Button className={""} onClick={() => setPlay(play ? false : true)}>Play</Button>
         {
           play ?
-          <PlayNow tes={play ? "fixed" : "hidden"} off={() => setPlay(false)} />
+          <PlayNow tes={play ? "fixed" : "hidden"} off={() => setPlay(false)} kanas={selectedKanas} />
           :
           null
         }
