@@ -60,7 +60,6 @@ const PickhiraganaChar = () => {
           :
           null
         }
-        {/* <PlayNow tes={play ? "hidden" : "fixed"} /> */}
       </div>
     </div>
   )
