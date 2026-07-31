@@ -20,14 +20,14 @@ const PickhiraganaChar = () => {
   }
 
   function handleRemoveKanas(index) {
-    setSelectedKanas(k => k.filter((_, i) => i !== index))
+    setSelectedKanas(k => k.filter(i => i.id !== index))
   }
 
   const renderGroup = (groupName: string) => {
     return hiraganaDatabase
       .filter(item => item.group === groupName)
       .map((data, index) => (
-        <CharCard id={data.id} char={data.char} romaji={data.romaji} onAdd={() => handleAddKanas(data)} onRemove={() => handleRemoveKanas(index)} />
+        <CharCard id={data.id} char={data.char} romaji={data.romaji} onAdd={() => handleAddKanas(data)} onRemove={() => handleRemoveKanas(data.id)} />
       ))
   }
 
