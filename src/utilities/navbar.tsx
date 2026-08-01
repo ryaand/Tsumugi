@@ -12,7 +12,7 @@ const Navbar = () => {
         if (isActive) {
             return `${baseClass} bg-[rgb(145,198,236)] text-accent-foreground border-l-4 border-accent-foreground`
         } else {
-            return `${baseClass} text-[rgb(65,72,77)]`
+            return `${baseClass} text-[rgb(65,72,77)] hover:text-[rgb(65,72,77)]/40 hover:bg-[rgb(145,198,236)]/20 hover:text-accent-foreground/60 transition-all transition-300`
         }
     }
 
