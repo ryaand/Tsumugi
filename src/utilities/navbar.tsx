@@ -18,7 +18,7 @@ const Navbar = () => {
 
     return (
         <nav className="w-full border border-zinc-300 p-4 flex flex-col gap-10 h-screen">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 pt-4">
                 <img src="/logo.png" className="w-15 rounded-2xl " draggable={false} alt="Logo" />
                 <div className="flex flex-col justify-center">
                     <p className="font-bold text-2xl">Tsumugi</p>
