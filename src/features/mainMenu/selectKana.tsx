@@ -26,12 +26,12 @@ const PickhiraganaChar = () => {
   const renderGroup = (groupName: string) => {
     return hiraganaDatabase
       .filter(item => item.group === groupName)
-      .map((data, index) => (
+      .map((data) => (
         <CharCard id={data.id} char={data.char} romaji={data.romaji} onAdd={() => handleAddKanas(data)} onRemove={() => handleRemoveKanas(data.id)} />
       ))
   }
 
-  console.log("ini di Select section: ", selectedKanas)
+  // console.log("ini di Select section: ", selectedKanas)
 
   return (
     <div className="h-screen flex flex-col p-10 overflow-x-hidden">

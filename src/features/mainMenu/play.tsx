@@ -1,11 +1,10 @@
 import { Button } from "#components/ui/button"
 import { useEffect, useState } from "react"
 
-
 const PlayNow = ({ tes, close, kanas }) => {
   const KanaItem = kanas
 
-  const defaultPlayingPage = "top-0 left-0 w-screen h-screen bg-amber-300 z-50"
+  const defaultPlayingPage = "top-0 left-0 w-screen bg-white h-screen z-50"
   const togglePlayingPage = `${defaultPlayingPage} ${tes}`
 
   const [randomChar, setRandomCard] = useState()
@@ -19,7 +18,6 @@ const PlayNow = ({ tes, close, kanas }) => {
         const kontol = KanaItem[0]
         setRandomCard(kontol.char)
         prev = 0
-        
       } else {
         const tes = randomIndex + 1
         const kontol = KanaItem[tes]
@@ -41,13 +39,9 @@ const PlayNow = ({ tes, close, kanas }) => {
   return (
     <div className={togglePlayingPage}>
       <Button onClick={close}>X</Button>
-      <div>
-        {/* huruf yg kamu pilih: 
-        {KanaItem.map(data => (
-          <div>{data.char}</div>
-        ))} */}
-        {randomChar}
-        <Button onClick={char}>Next</Button>
+      <div className="w-full h-full justify-center items-center flex-col flex">
+        <div className="font-bold zoom-1000">{randomChar}</div>
+        <Button onClick={char} className={"hover:cursor-pointer"}>Next</Button>
       </div>
     </div>
   )
