@@ -41,7 +41,7 @@ const PlayNow = ({ tes, close, kanas }) => {
 
   const checkingAnswer = () => {
     char()
-    if (answer.toLowerCase() == romaji) {
+    if (answer.toLowerCase() === romaji) {
       console.log("nice")
     } else {
       console.log("dungu njir")
@@ -51,6 +51,7 @@ const PlayNow = ({ tes, close, kanas }) => {
 
   useEffect(() => {
     char()
+    checkingAnswer()
   }, [])
 
   return (
