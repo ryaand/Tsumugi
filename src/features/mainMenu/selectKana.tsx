@@ -56,7 +56,7 @@ const PickhiraganaChar = () => {
         <Button className={""} onClick={() => setPlay(play ? false : true)}>Play</Button>
         {
           play ?
-          <PlayNow tes={play ? "fixed" : "hidden"} off={() => setPlay(false)} kanas={selectedKanas} />
+          <PlayNow tes={play ? "fixed" : "hidden"} close={() => setPlay(false)} kanas={selectedKanas} />
           :
           null
         }
