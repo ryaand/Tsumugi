@@ -12,6 +12,7 @@ const PlayNow = ({ tes, close, kanas }) => {
   const [fix, setFix] = useState(0)
   const [answer, setAnswer] = useState('')
   const [romaji, setRomaji] = useState()
+  const [nyawa, setNyawa] = useState(3)
 
   const randomIndex = Math.floor(Math.random() * KanaItem.length)
   let prev
@@ -42,36 +43,28 @@ const PlayNow = ({ tes, close, kanas }) => {
   const checkingAnswer = () => {
     char()
     if (answer.toLowerCase() === romaji) {
-      console.log("nice")
     } else {
-      console.log("dungu njir")
+      setNyawa(nyawa - 1)
+    }
+    if (nyawa == 1) {
+      close()
     }
     setAnswer('')
   }
 
   useEffect(() => {
     char()
-    checkingAnswer()
   }, [])
 
   return (
     <div className={togglePlayingPage}>
       <Button onClick={close}>X</Button>
       <div className="w-full h-full justify-center items-center flex-col flex">
+        <div>NYAWA: {nyawa}</div>
         <div className="font-bold zoom-1000">{randomCard}</div>
         <div className="flex-col flex items-center justify-center gap-2">
-          {/* next time saja lah */}
-          {/* <div className="flex gap-1">
-            <Button className={"bg-white shadow-md border-zinc-500/20 border-3 hover:bg-accent focus:bg-accent focus:border-accent-foreground "}></Button>
-            <Button className={"bg-white shadow-md border-zinc-500/20 border-3 hover:bg-accent focus:bg-accent focus:border-accent-foreground "}></Button>
-          </div>
-          <div className="flex gap-1">
-            <Button className={"bg-white shadow-md border-zinc-500/20 border-3 hover:bg-accent focus:bg-accent focus:border-accent-foreground "}></Button>
-            <Button className={"bg-white shadow-md border-zinc-500/20 border-3 hover:bg-accent focus:bg-accent focus:border-accent-foreground "}></Button>
-          </div> */}
-
-          <form onSubmit={e => {e.preventDefault();checkingAnswer()}}>
-            <Input value={answer} onChange={e => setAnswer(e.target.value)} autoFocus></Input>
+          <form onSubmit={e => { e.preventDefault(); checkingAnswer() }}>
+            <Input value={answer} onChange={e => setAnswer(e.target.value)} autoFocus autoComplete="off" spellCheck="false" required></Input>
           </form>
         </div>
       </div>
