@@ -12,7 +12,6 @@ const PlayNow = ({ tes, close, kanas }) => {
   const [fix, setFix] = useState(0)
   const [answer, setAnswer] = useState('')
   const [romaji, setRomaji] = useState()
-  const [nyawa, setNyawa] = useState(3)
 
   const randomIndex = Math.floor(Math.random() * KanaItem.length)
   let prev
@@ -44,10 +43,6 @@ const PlayNow = ({ tes, close, kanas }) => {
     char()
     if (answer.toLowerCase() === romaji) {
     } else {
-      setNyawa(nyawa - 1)
-    }
-    if (nyawa == 1) {
-      close()
     }
     setAnswer('')
   }
@@ -60,7 +55,6 @@ const PlayNow = ({ tes, close, kanas }) => {
     <div className={togglePlayingPage}>
       <Button onClick={close}>X</Button>
       <div className="w-full h-full justify-center items-center flex-col flex">
-        <div>NYAWA: {nyawa}</div>
         <div className="font-bold zoom-1000">{randomCard}</div>
         <div className="flex-col flex items-center justify-center gap-2">
           <form onSubmit={e => { e.preventDefault(); checkingAnswer() }}>
