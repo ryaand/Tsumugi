@@ -12,6 +12,8 @@ const PlayNow = ({ tes, close, kanas }) => {
   const [fix, setFix] = useState(0)
   const [answer, setAnswer] = useState('')
   const [romaji, setRomaji] = useState()
+  const [streak, setStreak] = useState(0)
+  const [highestStreak, setHighestStreak] = useState(streak)
 
   const randomIndex = Math.floor(Math.random() * KanaItem.length)
   let prev
@@ -19,33 +21,41 @@ const PlayNow = ({ tes, close, kanas }) => {
   const char = () => {
     if (randomIndex == fix) {
       if (randomIndex == (KanaItem.length - 1)) {
-        const kontol = KanaItem[0]
-        setRandomCard(kontol.char)
-        setRomaji(kontol.romaji)
+        const question = KanaItem[0]
+        setRandomCard(question.char)
+        setRomaji(question.romaji)
         prev = 0
       } else {
         const tes = randomIndex + 1
-        const kontol = KanaItem[tes]
-        setRandomCard(kontol.char)
-        setRomaji(kontol.romaji)
+        const question = KanaItem[tes]
+        setRandomCard(question.char)
+        setRomaji(question.romaji)
         prev = tes
       }
     } else {
-      const kontol = KanaItem[randomIndex]
-      setRandomCard(kontol.char)
-      setRomaji(kontol.romaji)
+      const question = KanaItem[randomIndex]
+      setRandomCard(question.char)
+      setRomaji(question.romaji)
       prev = randomIndex
     }
     setFix(prev)
   }
 
+  const poin = [0, 0]
+
   const checkingAnswer = () => {
     char()
     if (answer.toLowerCase() === romaji) {
+      setStreak(streak + 1)
+      if ((streak + 1) > highestStreak) {
+        setHighestStreak(streak + 1)
+      }
     } else {
+      setStreak(0)
     }
     setAnswer('')
   }
+  console.log(poin)
 
   useEffect(() => {
     char()
@@ -55,6 +65,7 @@ const PlayNow = ({ tes, close, kanas }) => {
     <div className={togglePlayingPage}>
       <Button onClick={close}>X</Button>
       <div className="w-full h-full justify-center items-center flex-col flex">
+        <p>Streak: {streak}    |     Highest Streak: {highestStreak}</p>
         <div className="font-bold zoom-1000">{randomCard}</div>
         <div className="flex-col flex items-center justify-center gap-2">
           <form onSubmit={e => { e.preventDefault(); checkingAnswer() }}>
